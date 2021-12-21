@@ -1,0 +1,116 @@
+##########################################################   MENU DRIVEN STACK PROGRAM  #######################################################################
+
+
+
+#include<iostream>
+using namespace std;
+class stack{
+	public:
+	int size;
+	int top;
+	int *a;
+};
+int full(stack*ptr)
+{
+	if(ptr->top==ptr->size-1)
+	{    cout<<"stack is full"<<endl;
+		return 1;		
+	}
+	else{
+		cout<<"stack is not full"<<endl;
+	   return 0;
+	}
+}
+int empty(stack*ptr){
+	if(ptr->top==-1)
+	{
+		cout<<"stack is empty"<<endl;
+		return 1;
+	}
+	else
+	{
+		cout<<"stack is not empty"<<endl;
+	    return 0;
+	}
+	
+
+}
+void push(stack*ptr,int key)
+{
+	if(full(ptr))
+	{
+		cout<<"stack is overflow"<<endl;
+	}
+	else
+	{
+		ptr->top++;
+		ptr->a[ptr->top]=key;
+		cout<<endl;
+		cout<<"element push in stacked successfully"<<endl;
+	}
+}
+int pull(stack*ptr)
+{
+	if(empty(ptr))
+	{
+		cout<<"stack is underflow"<<endl;
+	}
+	else
+	{
+		int key=ptr->a[ptr->top];
+		ptr->top--;
+		return key;
+	}
+	
+}
+int main()
+{   int choice;
+	stack*p=new stack();
+	p->size=10;
+	p->top=-1;
+	p->a=new int[p->size];
+	cout<<"---------------------------STACK PROGRAM-----------------------------"<<endl;
+	cout<<endl;
+	cout<<"||||||||||| you can enter only 10 elements in stack |||||||||||"<<endl;
+	cout<<endl;
+	cout<<"********************************"<<endl;
+	cout<<"MENU DRIVEN"<<endl;
+	cout<<"********************************"<<endl;
+	cout<<"1.CHECK STACK FULL OR NOT"<<endl;
+	cout<<"2.CHECK STACK EMPTY OR NOT"<<endl;
+	cout<<"3.PUSH ELEMENT IN STACK"<<endl;
+	cout<<"4.POP ELEMENT FROM STACK"<<endl;
+	cout<<"-------------program ends when user enter -1--------------"<<endl;
+    while(choice!=-1)
+	{
+	cout<<"----------------------------------------------"<<endl;
+	cout<<"enter your choice"<<endl;
+	cin>>choice;
+	switch(choice)
+	{
+		case 1:{
+			full(p);
+			break;
+		}
+		case 2:{
+			empty(p);
+			break;
+		}
+		case 3:{
+			int key;
+			cout<<"enter the value you want to push in stack"<<endl;
+			cin>>key;
+			push(p,key);
+			break;
+		}
+		case 4:{
+			int q=pull(p);
+			cout<<"element poped successfully and the pop element is "<<q<<endl;
+			break;
+		}
+		default:
+        cout<<"enter right choice"<<endl;
+    }
+}
+	}
+© 2021 GitHub, Inc.
