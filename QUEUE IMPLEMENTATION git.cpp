@@ -93,7 +93,7 @@ int main()
       			int x;
       			for(int i=0;i<k;i++)
       			{	cout<<"enter number"<<endl;
-      			    cin>>x;
+      			         cin>>x;
       				enqueue(queue,n,x);
 	  			}
 				break;
@@ -101,14 +101,14 @@ int main()
       		case 2:
       		{   
       			dequeue(queue,n);
-      			break;
+      			        break;
 			}
-			case 3:{
-				peek(queue,n);
+		case 3:{
+			peek(queue,n);
 				break;
 			}
-			case 4:{
-				display(queue,n);
+		case 4:{
+			display(queue,n);
 				break;
 			}
 		}
